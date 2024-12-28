@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://crwfo7qkqh23l"]
+
+[ext_resource type="Script" path="res://src/game_level/game_level.gd" id="1_6hgst"]
+[ext_resource type="PackedScene" uid="uid://bit8ntxora2vr" path="res://src/pause_menu/pause_menu.tscn" id="3_8by1l"]
+
+[node name="game_level" type="Node2D"]
+script = ExtResource("1_6hgst")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_8by1l")]
+visible = false
+
+[node name="state_2" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/state_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/state_2"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 1, 0, 1)
+
+[node name="state-1" type="HBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/state-1"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/state-1"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 0.05
+autostart = true
+script = ExtResource("1_6hgst")
+
+[connection signal="ready" from="." to="." method="_ready"]
+[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]

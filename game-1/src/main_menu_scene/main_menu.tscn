@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ryi1y05y3eps"]
+[gd_scene load_steps=5 format=3 uid="uid://ryi1y05y3eps"]
 
 [ext_resource type="Script" path="res://src/main_menu_scene/main_menu.gd" id="1_ytaf0"]
 [ext_resource type="Texture2D" uid="uid://105xsiebyygm" path="res://src/assets/intro-background.png" id="2_x4mo6"]
 [ext_resource type="Texture2D" uid="uid://dupu80g5rxiwb" path="res://src/assets/ai-prompt.svg" id="3_suqnk"]
+
+[sub_resource type="GDScript" id="GDScript_sg5gn"]
+script/source = "extends Node
+ 
+
+var state = 0
+"
 
 [node name="main_menu" type="Node2D"]
 position = Vector2(0, 4)
@@ -29,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_sg5gn")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
 layout_mode = 2
