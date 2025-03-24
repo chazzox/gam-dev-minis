@@ -24,9 +24,9 @@ const Square = () => {
     );
 
     return (
-        <container>
-            <graphics draw={drawCallback} />
-        </container>
+        <pixiContainer>
+            <pixiGraphics draw={drawCallback} />
+        </pixiContainer>
     );
 };
 
