@@ -1,0 +1,32 @@
+{
+    "people": [
+        { "id": 1, "name": "John Doe" },
+        { "id": 2, "name": "Jane Smith" },
+        { "id": 3, "name": "Alice Johnson" },
+        { "id": 4, "name": "Bob Brown" }
+    ],
+    "locations": [{ "id": 1, "name": "New York" }],
+    "scenes": [
+        {
+            "id": 1,
+            "locationId": 1,
+            "dialogue": [
+                {
+                    "from": 1,
+                    "to": [2, 3],
+                    "text": "Hello, welcome to New York!"
+                },
+                {
+                    "from": 2,
+                    "to": [1, 3],
+                    "text": "why thank you! its great to be here."
+                },
+                {
+                    "from": 3,
+                    "to": [1, 2],
+                    "text": "I love this city!"
+                }
+            ]
+        }
+    ]
+}
